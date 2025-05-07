@@ -1,0 +1,85 @@
+/* Pour que le main prenne toute la hauteur de la page */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container prend toute la hauteur */
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Ligne contenant les colonnes : même hauteur */
+.row.full-height {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  height: 100%;
+}
+
+/* Colonne gauche et droite prennent l'espace dispo */
+.col-md-4,
+.col-md-8 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Colonne gauche (informations personnelles) */
+.col-md-4 {
+  background-color: #f8f9fa;
+}
+
+/* Colonne droite (expériences, formations...) */
+.p_colonne_droite {
+  background-color: #dae6f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Espacement et séparation des sections internes */
+.p_colonne_droite > div,
+.col-md-4 > div {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Images fluides */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Effet zoom sur les icônes SVG */
+svg {
+  transition: transform 0.3s ease;
+}
+
+svg:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive : colonnes empilées et centrage des titres */
+@media (max-width: 767.98px) {
+  .row.full-height {
+    flex-direction: column;
+    height: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .fs-1,
+  .fs-2,
+  .fs-3 {
+    text-align: center;
+  }
+}
