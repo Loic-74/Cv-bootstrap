@@ -6,25 +6,21 @@ body {
   padding: 0;
 }
 
-/* === MAIN CONTAINER PREND TOUTE LA HAUTEUR === */
 main {
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
 
-/* === IMAGES FLUIDES === */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* === PHOTO DU CV AVEC TAILLE MAX FIXÉE === */
 .photo-cv {
   max-width: 200px;
 }
 
-/* === ZOOM SUR LES ICONES SVG === */
 svg {
   transition: transform 0.3s ease;
 }
@@ -32,80 +28,38 @@ svg:hover {
   transform: scale(1.1);
 }
 
-/* === CV FRANCAIS === */
-
-/* === LIGNE PRINCIPALE EN PLEINE HAUTEUR === */
-.cv-fr .row.full-height {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  height: 100%;
-}
-
-/* === COLONNES GAUCHE / DROITE === */
-.cv-fr .col-md-4,
-.cv-fr .col-md-8 {
-  display: flex;
-  flex-direction: column;
-}
-
-/* === COLONNE GAUCHE : INFOS PERSO === */
-.cv-fr .col-md-4 {
+/* === COLONNE GAUCHE ET DROITE === */
+.colonne-gauche-fr {
   background-color: #f8f9fa;
 }
 
-/* === COLONNE DROITE : FORMATION / EXPÉRIENCES === */
-.cv-fr .p_colonne_droite {
+.colonne-droite-fr {
   background-color: #dae6f2;
   border-radius: 10px 0 0 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* === ESPACEMENT ET SÉPARATION DES BLOCS === */
-.cv-fr .p_colonne_droite > div,
-.cv-fr .col-md-4 > div {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
-}
-
-/* === CV ANGLAIS === */
-
-.cv-en .row.full-height {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  height: 100%;
-}
-
-.cv-en .col-md-4,
-.cv-en .col-md-8 {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Colonne GAUCHE (infos perso) → BLEU */
-.cv-en .col-md-4 {
+.colonne-gauche-en {
   background-color: #dae6f2;
 }
 
-/* Colonne DROITE (contenu principal) → GRIS CLAIR */
-.cv-en .p_colonne_droite {
+.colonne-droite-en {
   background-color: #f8f9fa;
   border-radius: 0 10px 10px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Séparation des blocs */
-.cv-en .p_colonne_droite > div,
-.cv-en .col-md-4 > div {
+/* === ESPACEMENT ET SÉPARATION DES BLOCS === */
+.colonne-droite-fr > div,
+.colonne-gauche-fr > div,
+.colonne-droite-en > div,
+.colonne-gauche-en > div {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
 }
 
-/* === RESPONSIVE GLOBAL ===*/
-
+/* === RESPONSIVE === */
 @media (max-width: 767.98px) {
   .row.full-height {
     flex-direction: column !important;
@@ -123,4 +77,8 @@ svg:hover {
   .fs-3 {
     text-align: center;
   }
+}
+.progress-fill {
+  width: 0;
+  transition: width 1.2s ease-in-out;
 }
